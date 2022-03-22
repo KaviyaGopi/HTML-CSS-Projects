@@ -34,22 +34,43 @@
       .accordion {
         width: 700px;
         margin: 100px auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
       }
 
       .Item {
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 24px;
+        row-gap: 32px;
+        align-items: center;
       }
 
       .number,
       .text {
         font-size: 24px;
         font-weight: 500;
-        color: #087f5b;
+        /* color: #087f5b; */
+      }
+
+      .number {
+        color: #ced4da;
       }
 
       .icon {
         width: 24px;
         height: 24px;
         stroke: #087f5b;
+      }
+
+      .hidden-box {
+        grid-column: 2;
+        display: none;
       }
 
       .hidden-box p {
@@ -65,14 +86,58 @@
         gap: 12px;
       }
 
-      /* .hidden-box li {
-        margin-left: 20px;
-      } */
+      .open {
+        border-top: 4px solid #007f5b;
+      }
+
+      .open .hidden-box {
+        display: block;
+      }
+
+      .open .number,
+      open .text {
+        color: #007f5b;
+      }
     </style>
   </head>
   <body>
     <div class="accordion">
       <div class="Item">
+        <p class="number">01</p>
+        <p class="text">Where are these chair assembled ?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo enim
+            error, ratione quae ipsam molestias, veritatis impedit in adipisci,
+            pariatur fugiat odit dolorum repudiandae eum perspiciatis aperiam
+            ipsa laborum. Voluptatem.
+          </p>
+          <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Placeat optio distinctio cum rerum tempore, porro deserunt!</li>
+            <li>
+              adipisci natus tenetur enim odio, temporibus perspiciatis nisi
+            </li>
+            <li>perspiciatis aperiam ipsa laborum. Voluptatem.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="Item open">
         <p class="number">02</p>
         <p class="text">How long I have to return my chair ?</p>
         <svg
@@ -98,13 +163,44 @@
           </p>
           <ul>
             <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Placeat optio distinctio cum rerum tempore, porro deserunt!</li>
             <li>
-              Placeat optio distinctio cum rerum tempore, porro deserunt!
-              Consectetur
+              adipisci natus tenetur enim odio, temporibus perspiciatis nisi
             </li>
+            <li>perspiciatis aperiam ipsa laborum. Voluptatem.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="Item">
+        <p class="number">03</p>
+        <p class="text">Do you ship to contries the EU ?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo enim
+            error, ratione quae ipsam molestias, veritatis impedit in adipisci,
+            pariatur fugiat odit dolorum repudiandae eum perspiciatis aperiam
+            ipsa laborum. Voluptatem.
+          </p>
+          <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Placeat optio distinctio cum rerum tempore, porro deserunt!</li>
             <li>
-              adipisci natus tenetur enim odio, temporibus perspiciatis nisi,
-              tempora illo atque voluptatem quod!
+              adipisci natus tenetur enim odio, temporibus perspiciatis nisi
             </li>
             <li>perspiciatis aperiam ipsa laborum. Voluptatem.</li>
           </ul>
